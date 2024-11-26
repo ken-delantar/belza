@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="login.css">
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <div class="flex h-screen bg-[#fbfbfe]">
+    <aside class="w-80 hidden md:flex md:flex-col border m-4 mr-0 rounded-lg overflow-hidden" style="text-wrap: nowrap;">
+      <p class='m-4 mb-12 font-bold text-2xl text-center text-[#00446b]' style="text-wrap: wrap;">NextFleet Dynamics</p>
+      <div class="flex flex-col mr-4">
+        <div class='flex relative my-1 cursor-pointer'>
+          <a class='ml-8 flex p-1 w-full rounded-xl text-[#008ee0] mr-4' href="dashboard.html">
+            <span class='flex items-center gap-1 px-1'>
+              <i class="fas fa-tachometer-alt" style="width: 25px;"></i>
+              <p>Dashboard</p>
+            </span>
+          </a>
+        </div>
+        <div class='flex relative my-1 cursor-pointer'>
+          <a class='ml-8 flex p-1 w-full rounded-xl text-[#00446b] mr-4' href="contract.html">
+            <span class='flex items-center gap-1 px-1'>
+              <i class="fas fa-file-contract" style="width: 25px;"></i>
+              <p>Contract Management</p>
+            </span>
+          </a>
+        </div>
+        <div class='flex relative my-1 cursor-pointer'>
+          <a class='ml-8 flex p-1 w-full rounded-xl text-[#00446b] mr-4' href="drivermanagement.html">
+            <span class='flex items-center gap-1 px-1'>
+              <i class="fas fa-users-cog" style="width: 25px;"></i>
+              <p>Driver Management</p>
+            </span>
+          </a>
+        </div>
+        <div class='flex relative my-1 cursor-pointer'>
+          <a class='ml-8 flex p-1 w-full rounded-xl text-[#00446b] mr-4' href="fleetmanagement.html">
+            <span class='flex items-center gap-1 px-1'>
+              <i class="fas fa-truck" style="width: 25px;"></i>
+              <p>Fleet Management</p>
+            </span>
+          </a>
+        </div>
+        <div class='flex relative my-1 cursor-pointer'>
+          <a class='ml-8 flex p-1 w-full rounded-xl text-[#00446b] mr-4' href="report.html">
+            <span class='flex items-center gap-1 px-1'>
+              <i class="fas fa-chart-line" style="width: 25px;"></i>
+              <p>Reporting</p>
+            </span>
+          </a>
+        </div>
+      </div>
+    </aside>
+    
+    <div class='flex flex-col w-full h-screen overflow-y-scroll'>
+      <nav class='md:sticky block md:w-auto top-4 z-10 bg-white-10/50 backdrop-blur-sm border border-gray-300 rounded-md m-4'>
+        <div class="flex w-full">
+          <div class="-me-2 flex items-center sm:hidden">
+            <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+            </button>
+          </div>
+          <div class="relative flex justify-between w-full">
+            <div class="mx-4 my-4 font-medium text-3xl">Dashboard</div>
+            <button type="button" class="inline-flex items-center px-3 py-2 font-medium transition ease-in-out duration-150">
+              Juan Dela Cruz
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-caret-down">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M18 9c.852 0 1.297 .986 .783 1.623l-.076 .084l-6 6a1 1 0 0 1 -1.32 .083l-.094 -.083l-6 -6l-.083 -.094l-.054 -.077l-.054 -.096l-.017 -.036l-.027 -.067l-.032 -.108l-.01 -.053l-.01 -.06l-.004 -.057v-.118l.005 -.058l.009 -.06l.01 -.052l.032 -.108l.027 -.067l.07 -.132l.065 -.09l.073 -.081l.094 -.083l.077 -.054l.096 -.054l.036 -.017l.067 -.027l.108 -.032l.053 -.01l.06 -.01l.057 -.004l12.059 -.002z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <main class="mx-4 mb-4 mt-24 md:mt-0 flex flex-col gap-4">
+        <div class="row">
+          <div class="col-md">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                  <h1 style="font-size: 20px;">Total Sales</h1>
+                  <h3 style="font-size: 30px; font-weight: bolder;">120,000</h3>
+                  <a href="./report.html" class="btn btn-primary">Go to Reporting</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                  <h1 style="font-size: 20px;">Available Driver</h1>
+                  <h3 style="font-size: 30px; font-weight: bolder;">20</h3>
+                  <a href="./drivermanagement.html" class="btn btn-primary">Manage Driver</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                  <h1 style="font-size: 20px;">Available Vehicle</h1>
+                  <h3 style="font-size: 30px; font-weight: bolder;">25</h3>
+                  <a href="./fleetmanagement.html" class="btn btn-primary">See Available Vechicles</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                  <h1 style="font-size: 20px;">Maintenance Vehicle</h1>
+                  <h3 style="font-size: 30px; font-weight: bolder;">3</h3>
+                  <a href="./fleetmanagement.html" class="btn btn-primary">Check ongoing Maintenance</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row gap-2">
+          <div class="p-4 col-md" style="border: 1px solid #c5c4c4; border-radius: 5px; height: 400px;">
+            <div style="height: 100%; display: flex; justify-content: center; align-items: center;">
+              <canvas id="fleetUtilizationChart" style="max-height: 100%; max-width: 100%;"></canvas>
+            </div>
+          </div>
+        
+          <div class="p-4 col-4" style="border: 1px solid #c5c4c4; border-radius: 5px; height: 400px;">
+            <div style="height: 100%; display: flex; justify-content: center; align-items: center;">
+              <canvas id="procurementChart" style="max-height: 100%; max-width: 100%;"></canvas>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row gap-2">
+          <div class="p-4 col-4" style="border: 1px solid #c5c4c4; border-radius: 5px; height: 400px;">
+            <div style="height: 100%; display: flex; justify-content: center; align-items: center;">
+              <canvas id="inventoryStatusChart" style="max-height: 100%; max-width: 100%;"></canvas>
+            </div>
+          </div>
+        
+          <div class="p-4 col-md" style="border: 1px solid #c5c4c4; border-radius: 5px; height: 400px;">
+            <div style="height: 100%; display: flex; justify-content: center; align-items: center;">
+              <canvas id="vendorPerformanceChart" style="max-height: 100%; max-width: 100%;"></canvas>
+            </div>
+          </div>
+        </div>     
+      </main>
+
+    </div>
+  </div>
+
+  <script>
+    var ctx2 = document.getElementById('procurementChart').getContext('2d');
+    var procurementChart = new Chart(ctx2, {
+      type: 'pie',
+      data: {
+        labels: ['Electronics', 'Vehicles', 'Others'],
+        datasets: [{
+          data: [30, 50, 10],
+          backgroundColor: ['#FF5733', '#36A2EB', '#C70039'],
+          hoverOffset: 4
+        }]
+      },
+      options: {
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              padding: 20, 
+            }
+          }
+        }
+      }
+    });
+
+    var ctx1 = document.getElementById('fleetUtilizationChart').getContext('2d');
+    var fleetUtilizationChart = new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['Vehicle 1', 'Vehicle 2', 'Vehicle 3', 'Vehicle 4'],
+        datasets: [{
+          label: 'Fleet Utilization',
+          data: [70, 55, 85, 65],
+          backgroundColor: '#4BC0C0',
+          borderColor: '#36A2EB',
+          borderWidth: 1
+        }]
+      }
+    });
+
+    var ctx3 = document.getElementById('vendorPerformanceChart').getContext('2d');
+    var vendorPerformanceChart = new Chart(ctx3, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+          label: 'Vendor Performance',
+          data: [80, 85, 90, 95, 80, 85, 90, 95, 80, 85, 90, 95],
+          fill: false,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          tension: 0.1
+        }]
+      }
+    });
+
+    var ctx4 = document.getElementById('inventoryStatusChart').getContext('2d');
+    var inventoryStatusChart = new Chart(ctx4, {
+      type: 'doughnut',
+      data: {
+        labels: ['In Stock', 'Low Stock', 'Out of Stock'],
+        datasets: [{
+          data: [60, 30, 10],
+          backgroundColor: ['#FF5733', '#C70039', '#900C3F'],
+          hoverOffset: 4
+        }]
+      },
+      options: {
+        plugins: {
+          legend: {
+            position: 'bottom', // Moves the legend to the bottom
+            labels: {
+              padding: 20, // Adds padding between the chart and the legend
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

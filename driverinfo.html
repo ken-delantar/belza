@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Driver Information</title>
+</head>
+
+<body>
+    <div class="container-fluid dashboard-content bg-white">
+        <div class="row align-items-start bg-white">
+            <div class="col-lg-9 col-md-8 col-sm-12 p-4 order-1">
+                <div class="row">
+                    <p class="d-flex align-items-center">
+                        <span class="text-dark font-weight-bold" style="font-size: 1.5rem;">Driver Information</span>
+                    </p>
+                </div>
+
+                <div class="row rounded shadow" style="border: 1px solid #c5c4c4; box-sizing: border-box;">
+                    <div class="m-3 w-100 pb-1 d-flex align-items-start justify-content-around">
+                        <div class="d-flex align-items-start">
+                            <img src="./5283021.png" class="mr-2" width="120px" height="120px">
+                            <span>
+                                <h4 class="m-0 font-bold">Juan Dela Cruz</h4>
+                                <p class="m-0">driver@example.com</p>
+                                <p class="m-0">+63 900 000 0000</p>
+                                <p class="m-0">Quezon City, Philippines, 1422</p>
+                            </span>
+                        </div>
+
+                        <div>
+                            <h4 class="m-0 font-bold">Liscense No</h4>
+                            <p class="m-0">0000001</p>
+                            <p class="m-0">Rating: <span class="font-weight-bold">★★★★☆</span></p>
+                            <p class="m-0">Joined: <span class="font-weight-bold">January 1, 2023</span></p>
+                            <p class="m-0">Status: Available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mb-0 mt-4">Completed Rides</p>
+                <div class="row bg-white p-3 justify-content-around shadow mt-0" style="border: 1px solid #c5c4c4; border-radius: 5px;">
+                    <div class="table-responsive">
+                        <table class="table table-bordered second">
+                            <thead class="border-0">
+                                <tr>
+                                    <th>Ride Details</th>
+                                    <th>Fare/Status</th>
+                                    <th>Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-dark">
+                                        <p class="m-0 fw-bold text-dark">Ride #001</p>
+                                        <p class="m-0">Caloocan City</p>
+                                    </td>
+                                    <td>
+                                        <p class="m-0 fw-bold text-dark">200.00 PHP</p>
+                                        <p class="m-0 text-success">Completed</p>
+                                    </td>
+                                    <td>
+                                        <p class="m-0">★★★★☆</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row mt-3 rounded shadow" style="border: 1px solid #c5c4c4; box-sizing: border-box;">
+                    <div class="m-3 w-100 pb-1">
+                        <h5 class="mb-4">Driver Reviews</h5>
+
+                        <div class="rounded p-2 mb-3" style="max-height: 400px; overflow: auto;">
+                            <div class="mb-4">
+                                <div class="d-flex align-items-start">
+                                    <img src="./images.png" class="img-fluid rounded-circle" alt="Reviewer Avatar" style="max-width: 40px; height: auto; margin-right: 10px;">
+                                    <div class="flex-grow-1">
+                                        <strong class="text-dark">Customer Name</strong>
+                                        <span class="text-muted"><i>(2024-10-21)</i></span>
+                                        <div class="text-warning mb-1">★★★★☆</div>
+                                        <p class="mb-1">Excellent driving! Would hire again.</p>
+                                        <div class="d-flex align-items-center mt-2">
+                                            <button class="btn btn-link text-danger" style="padding: 0;">
+                                                <i class="bi bi-heart" style="font-size: 1.2rem;"></i>
+                                            </button>
+                                        </div>
+
+                                        <form class="mt-2">
+                                            <div class="mb-3">
+                                                <textarea class="form-control" rows="4" placeholder="Type your reply here..."></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Send Reply</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12 order-2 order-lg-1 mt-0 mt-lg-5" style="border-left: none;">
+                <div class="p-1 shadow" style="border: 1px solid #c5c4c4; border-radius: 5px;">
+                    <div class="m-3 pb-2">
+                        <h5>Driver Performance</h5>
+                        <span class="w-100 d-flex justify-content-between">
+                            <p class="m-0 text-dark">Total Earnings</p>
+                            <p class="m-0">5,000 PHP</p>
+                        </span>
+                        <span class="w-100 d-flex justify-content-between">
+                            <p class="m-0 text-dark">Total Rides</p>
+                            <p class="m-0">150 rides</p>
+                        </span>
+                        <span class="w-100 d-flex justify-content-between">
+                            <p class="m-0 text-dark">Average Rating</p>
+                            <p class="m-0">★★★★☆</p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Sales & Logistics Reporting</title>
+</head>
+
+<body>
+    <div class="flex h-screen bg-[#fbfbfe]">
+        <!-- Sidebar -->
+        <aside class="w-80 hidden md:flex md:flex-col border m-4 mr-0 rounded-lg overflow-hidden">
+            <p class='m-4 mb-12 font-bold text-2xl text-center text-[#00446b]'>NextFleet Dynamics</p>
+            <div class="flex flex-col mr-4">
+              <!-- Sidebar Links -->
+              <div class='flex relative my-1 cursor-pointer'>
+                <a class='ml-8 flex p-1 w-full rounded-xl text-[#008ee0] mr-4' href="dashboard.php">
+                  <span class='flex items-center gap-1 px-1'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-layout-dashboard">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M9 3a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2zm0 12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2zm10 -4a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2zm0 -8a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2z" />
+                    </svg>
+                    <p>Dashboard</p>
+                  </span>
+                </a>
+              </div>
+              <!-- Sales Reporting Link -->
+              <div class='flex relative my-1 cursor-pointer'>
+                <a class='ml-8 flex p-1 w-full rounded-xl text-[#008ee0] mr-4' href="sales_report.php">
+                  <span class='flex items-center gap-1 px-1'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-chart-line">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M3 12l5 5l4 -4l6 6l4 -4" />
+                    </svg>
+                    <p>Sales Report</p>
+                  </span>
+                </a>
+              </div>
+              <!-- Logistics Link -->
+              <div class='flex relative my-1 cursor-pointer'>
+                <a class='ml-8 flex p-1 w-full rounded-xl text-[#008ee0] mr-4' href="logistics_report.php">
+                  <span class='flex items-center gap-1 px-1'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-truck">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M6 3h12a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-1v-3a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v3h-4v-3a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v3h-1a1 1 0 0 1 -1 -1V4a1 1 0 0 1 1 -1z" />
+                    </svg>
+                    <p>Logistics Report</p>
+                  </span>
+                </a>
+              </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <div class='flex flex-col w-full h-screen overflow-y-scroll'>
+            <nav class='md:sticky block md:w-auto top-4 z-10 bg-white-10/50 backdrop-blur-sm border border-gray-300 rounded-md m-4'>
+                <div class="flex w-full">
+                    <div class="relative flex justify-between w-full">
+                        <div class="mx-4 my-4 font-medium text-3xl">Sales & Logistics Reporting</div>
+                        <button type="button" class="inline-flex items-center px-3 py-2 font-medium transition ease-in-out duration-150">
+                            Juan Dela Cruz
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-caret-down">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M18 9c.852 0 1.297 .986 .783 1.623l-.076 .084l-6 6a1 1 0 0 1 -1.32 .083l-.094 -.083l-6 -6l-.083 -.094l-.054 -.077l-.054 -.096l-.017 -.036l-.027 -.067l-.032 -.108l-.01 -.053l-.01 -.06l-.004 -.057v-.118l.005 -.058l.009 -.06l.01 -.052l.032 -.108l.027 -.067l.07 -.132l.065 -.09l.073 -.081l.094 -.083l.077 -.054l.096 -.054l.036 -.017l.067 -.027l.108 -.032l.053 -.01l.06 -.01l.057 -.004l12.059 -.002z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+    
+            <!-- Main Section -->
+            <main class="mx-4 mb-4 mt-24 md:mt-0 flex flex-col gap-4">
+                <!-- Statistics for Sales and Logistics -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h1 style="font-size: 20px;">Total Sales</h1>
+                                <h3 style="font-size: 30px; font-weight: bolder;">$120,000</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h1 style="font-size: 20px;">Total Deliveries</h1>
+                                <h3 style="font-size: 30px; font-weight: bolder;">150 Deliveries</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h1 style="font-size: 20px;">Driver Performance</h1>
+                                <h3 style="font-size: 30px; font-weight: bolder;">★★★★☆</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h1 style="font-size: 20px;">Sales Growth</h1>
+                                <h3 style="font-size: 30px; font-weight: bolder;">10% growth</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sales Performance Chart -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4 style="font-weight: bold;">Sales by Product</h4>
+                        <canvas id="salesChart" width="400" height="200"></canvas>
+                    </div>
+                    <div class="col-lg-6">
+                        <h4 style="font-weight: bold;">Driver Deliveries</h4>
+                        <canvas id="driverChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+
+                <!-- Driver Data Section -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 style="font-weight: bold;">Driver Details</h4>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Driver Name</th>
+                                    <th>Total Rides</th>
+                                    <th>Total Earnings</th>
+                                    <th>Average Rating</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Juan Dela Cruz</td>
+                                    <td>150</td>
+                                    <td>$5,000</td>
+                                    <td>★★★★☆</td>
+                                    <td>Available</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap and Chart.js scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Sales Chart
+        var ctx1 = document.getElementById('salesChart').getContext('2d');
+        var salesChart = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Model A', 'Model B', 'Model C', 'Model D'],
+                datasets: [{
+                    label: 'Sales Quantity',
+                    data: [200, 150, 120, 90],
+                    backgroundColor: ['#008ee0', '#ffb3b3', '#4caf50', '#ff9800'],
+                    borderColor: '#fff',
+                    borderWidth: 1
+                }]
+            }
+        });
+
+        // Driver Deliveries Chart
+        var ctx2 = document.getElementById('driverChart').getContext('2d');
+        var driverChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
+                datasets: [{
+                    label: 'Deliveries',
+                    data: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],
+                    fill: false,
+                    borderColor: '#ff5722',
+                    tension: 0.1
+                }]
+            }
+        });
+    </script>
+</body>
+
+</html>

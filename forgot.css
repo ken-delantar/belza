@@ -1,0 +1,46 @@
+body {
+    background: #0D4C87; /* Dark blue background */
+    color:black;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('bus-background.jpg'); /* Add your background image path here */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.forgot-password-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Translucent white box */
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.forgot-password-container h2 {
+    margin-bottom: 20px;
+    color: #002244; /* Text color */
+}
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    background-color: #002244; /* Button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.footer-text {
+    margin-top: 20px;
+    font-size: 12px;
+}
